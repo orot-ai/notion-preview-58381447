@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition: background-color 0.8s ease;
+}
+
+body.work-mode {
+  background: linear-gradient(135deg, #0f0f23, #1a1a3e);
+}
+
+body.break-mode {
+  background: linear-gradient(135deg, #0a2e1f, #1a3e2e);
+}
+
+.timer-container {
+  text-align: center;
+  color: white;
+}
+
+.mode-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  opacity: 0.7;
+  margin-bottom: 32px;
+}
+
+.circle-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto 40px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: rgba(255,255,255,0.1);
+  stroke-width: 6;
+}
+
+.circle-progress {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear, stroke 0.8s ease;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.circle-progress.work {
+  stroke: #e17055;
+}
+
+.circle-progress.break {
+  stroke: #00b894;
+}
+
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 56px;
+  font-weight: 200;
+  letter-spacing: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 12px 32px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50px;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: rgba(225, 112, 85, 0.3);
+  border-color: rgba(225, 112, 85, 0.5);
+}
+
+.btn.primary.break-btn {
+  background: rgba(0, 184, 148, 0.3);
+  border-color: rgba(0, 184, 148, 0.5);
+}
+
+.session-count {
+  font-size: 13px;
+  opacity: 0.5;
+  letter-spacing: 2px;
+}
